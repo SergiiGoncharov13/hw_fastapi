@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
 from src.database.models import User
-from src.shemas import UserResponse, UserModel
+from src.shemas import UserModel
 
 
 async def get_users(db: Session):

@@ -8,7 +8,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 
 from src.database.db import get_db
-from src.routes import users
+from src.routes import users, find
 
 app = FastAPI()
 
@@ -44,3 +44,5 @@ def healthchecker(db: Session = Depends(get_db)):
 
 
 app.include_router(users.router, prefix='/api')
+app.include_router(find.find)
+
