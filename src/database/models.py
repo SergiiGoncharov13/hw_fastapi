@@ -1,7 +1,7 @@
 import enum
 
 from sqlalchemy.types import Integer, String, DateTime, Date
-from sqlalchemy import Column, func, event, Enum
+from sqlalchemy import Column, func, Enum
 from sqlalchemy.orm import declarative_base
 
 

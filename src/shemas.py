@@ -1,6 +1,5 @@
 import datetime
 from pydantic import BaseModel, Field, EmailStr
-from sqlalchemy import Column, String
 
 from src.database.models import Role
 
