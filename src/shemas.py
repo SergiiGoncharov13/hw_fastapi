@@ -1,5 +1,8 @@
 import datetime
 from pydantic import BaseModel, Field, EmailStr
+from sqlalchemy import Column, String
+
+from src.database.models import Role
 
 
 class UserModel(BaseModel):
@@ -24,3 +27,26 @@ class UserResponse(BaseModel):
 
     class Config:
         orm_mode = True
+
+
+class GuestModel(BaseModel):
+    guest_name: str = Field()
+    email: EmailStr
+    password: str = Field()
+
+
+class GuestResponse(BaseModel):
+    id: int
+    username: str
+    email: str
+    avatar: str
+    roles: Role
+
+    class Config:
+        orm_mode = True
+
+
+class TokenModel(BaseModel):
+    access_token: str
+    refresh_token: str
+    token_type: str = 'bearer'

@@ -1,20 +1,25 @@
 [tool.poetry]
-name = "hw-fastapi"
+name = "hw-fastapi-12"
 version = "0.1.0"
 description = ""
 authors = ["SergiiGoncharov13 <goncharov.s.work@gmail.com>"]
 readme = "README.md"
-packages = [{include = "hw_fastapi"}]
+packages = [{include = "hw_fastapi_12"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = "^0.95.1"
-uvicorn = "^0.21.1"
-sqlalchemy = "^2.0.9"
-psycopg2-binary = "^2.9.6"
+sqlalchemy = "^2.0.10"
 alembic = "^1.10.3"
+uvicorn = "^0.21.1"
+psycopg2-binary = "^2.9.6"
+pydentic = "^0.0.1.dev3"
 pydantic = {extras = ["email"], version = "^1.10.7"}
 jinja2 = "^3.1.2"
+passlib = "^1.7.4"
+libgravatar = "^1.0.4"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+python-multipart = "^0.0.6"
 
 
 [build-system]

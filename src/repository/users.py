@@ -1,7 +1,8 @@
+from libgravatar import Gravatar
 from sqlalchemy.orm import Session
 
 from src.database.models import User
-from src.shemas import UserModel
+from src.shemas import UserModel, GuestModel
 
 
 async def get_users(db: Session):
@@ -41,3 +42,17 @@ async def remove(user_id: int, db: Session):
         db.delete(user)
         db.commit()
     return user
+
+
+async def create_guest(body: GuestModel, db: Session):
+    g = Gravatar(body.email)
+
+    new_guest = User(**body.dict(), avatar=g.get_image()),
+    db.add(new_guest)
+    db.commit()
+    db.refresh(new_guest)
+
+
+async def update_token(user: User, refresh_token, db: Session):
+    user.refresh_token = refresh_token
+    db.commit()
