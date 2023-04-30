@@ -21,7 +21,7 @@ async def read_users_me(current_user: User = Depends(auth_service.get_current_us
 async def update_avatar_user(file: UploadFile = File(), current_user: User = Depends(auth_service.get_current_user),
                              db: Session = Depends(get_db)):
 
-    public_id = CloudImage.generate_folder_name(current_user.email)
+    public_id = CloudImage.generate_name_avatar(current_user.email)
     r = CloudImage.upload(file.file, public_id)
     src_url = CloudImage.get_url_for_avatar(public_id, r)
     user = await repository_users.update_avatar(current_user.email, src_url, db)
