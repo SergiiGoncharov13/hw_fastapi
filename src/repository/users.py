@@ -1,3 +1,5 @@
+from typing import Type
+
 from libgravatar import Gravatar
 from sqlalchemy.orm import Session
 
@@ -56,3 +58,16 @@ async def create_guest(body: GuestModel, db: Session):
 async def update_token(user: User, refresh_token, db: Session):
     user.refresh_token = refresh_token
     db.commit()
+
+
+async def confirmed_email(email: str, db: Session) -> None:
+    user = await get_user_by_email(email, db)
+    user.confirmed = True
+    db.commit()
+
+
+async def update_avatar(email, url: str, db: Session) -> Type[User] | None:
+    user = await get_user_by_email(email, db)
+    user.avatar = url
+    db.commit()
+    return user

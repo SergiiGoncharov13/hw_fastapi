@@ -1,16 +1,34 @@
 import time
 
+import redis.asyncio as redis
 from fastapi import FastAPI, Depends, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+from fastapi_limiter import FastAPILimiter
+from fastapi.middleware.cors import CORSMiddleware
 
 from src.database.db import get_db
-from src.routes import users, find, auth
+from src.routes import users, find, auth, guest
+from src.conf.config import settings
 
 app = FastAPI()
+
+
+@app.on_event("startup")
+async def startup():
+    r = await redis.Redis(host=settings.redis_host, port=settings.redis_port)
+    await FastAPILimiter.init(r)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://127.0.0.1:8000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.middleware("http")
@@ -46,4 +64,4 @@ def healthchecker(db: Session = Depends(get_db)):
 app.include_router(users.router, prefix='/api')
 app.include_router(find.find, prefix='/api')
 app.include_router(auth.router, prefix='/api')
-
+app.include_router(guest.router, prefix='/api')

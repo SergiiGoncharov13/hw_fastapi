@@ -1,6 +1,7 @@
 from typing import List
 
 from fastapi import Depends, HTTPException, status, Path, APIRouter
+from fastapi_limiter.depends import RateLimiter
 from sqlalchemy.orm import Session
 
 from src.database.db import get_db
@@ -18,13 +19,14 @@ allowed_operation_update = RoleAccess([Role.admin, Role.moderator])
 allowed_operation_remove = RoleAccess([Role.admin])
 
 
-@router.get("/", response_model=List[UserResponse], name="Users list")
+@router.get("/", response_model=List[UserResponse], name="Users list",
+            dependencies=[Depends(RateLimiter(times=2, seconds=5))])
 async def get_users(db: Session = Depends(get_db), current_user: User = Depends(auth_service.get_current_user)):
     users = await repository_users.get_users(db)
     return users
 
 
-@router.get("/{user_id}", response_model=UserResponse,)
+@router.get("/{user_id}", response_model=UserResponse, dependencies=[Depends(RateLimiter(times=2, seconds=5))])
 async def get_user(user_id: int = Path(ge=1), db: Session = Depends(get_db),
                    current_user: User = Depends(auth_service.get_current_user)):
     user = await repository_users.get_user_by_id(user_id, db)
@@ -33,7 +35,8 @@ async def get_user(user_id: int = Path(ge=1), db: Session = Depends(get_db),
     return user
 
 
-@router.post("/", response_model=UserResponse, status_code=status.HTTP_201_CREATED,)
+@router.post("/", response_model=UserResponse, status_code=status.HTTP_201_CREATED,
+             dependencies=[Depends(RateLimiter(times=2, seconds=5))])
 async def create_user(body: UserModel, db: Session = Depends(get_db),
                       current_user: User = Depends(auth_service.get_current_user)):
     user = await repository_users.get_user_by_email(body.email, db)
@@ -44,7 +47,7 @@ async def create_user(body: UserModel, db: Session = Depends(get_db),
     return user
 
 
-@router.put("/{user_id}", response_model=UserResponse)
+@router.put("/{user_id}", response_model=UserResponse, dependencies=[Depends(RateLimiter(times=2, seconds=5))])
 async def update_user(body: UserModel, user_id: int = Path(ge=1), db: Session = Depends(get_db),
                       current_user: User = Depends(auth_service.get_current_user)):
     user = await repository_users.update(user_id, body, db)
@@ -53,7 +56,8 @@ async def update_user(body: UserModel, user_id: int = Path(ge=1), db: Session = 
     return user
 
 
-@router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT,
+               dependencies=[Depends(RateLimiter(times=2, seconds=5))])
 async def remove_user(user_id: int = Path(ge=1), db: Session = Depends(get_db),
                       current_user: User = Depends(auth_service.get_current_user)):
     user = await repository_users.remove(user_id, db)

@@ -1,7 +1,7 @@
 import enum
 
 from sqlalchemy.types import Integer, String, DateTime, Date
-from sqlalchemy import Column, func, Enum
+from sqlalchemy import Column, func, Enum, Boolean
 from sqlalchemy.orm import declarative_base
 
 
@@ -35,4 +35,5 @@ class Guest(Base):
     refresh_token = Column(String(255), nullable=True)
     avatar = Column(String(255), nullable=True)
     roles = Column('roles', Enum(Role), default=Role.guest)
+    confirmed = Column(Boolean, default=False)
 
