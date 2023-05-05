@@ -19,7 +19,7 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     first_name = Column(String(20), index=True)
     last_name = Column(String(30), index=True)
-    email = Column(String(15), unique=True, index=True)
+    email = Column(String(150), unique=True, index=True)
     tel_number = Column(Integer)
     birthday = Column(Date, default=func.now())
     created_at = Column(DateTime, default=func.now())

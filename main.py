@@ -1,4 +1,5 @@
 import time
+import pathlib
 
 import redis.asyncio as redis
 from fastapi import FastAPI, Depends, HTTPException, Request
@@ -40,7 +41,8 @@ async def custom_middleware(request: Request, call_next):
     return response
 
 templates = Jinja2Templates(directory="templates")
-app.mount("/static", StaticFiles(directory="static"), name="static")
+BASE_DIR = pathlib.Path(__file__).parent
+app.mount("/static", StaticFiles(directory=BASE_DIR), name="static")
 
 
 @app.get("/", response_class=HTMLResponse)

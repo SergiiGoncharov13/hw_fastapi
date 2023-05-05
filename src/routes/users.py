@@ -22,6 +22,14 @@ allowed_operation_remove = RoleAccess([Role.admin])
 @router.get("/", response_model=List[UserResponse], name="Users list",
             dependencies=[Depends(RateLimiter(times=2, seconds=5))])
 async def get_users(db: Session = Depends(get_db), current_user: User = Depends(auth_service.get_current_user)):
+    """
+    The get_users function returns a list of users.
+
+    :param db: Session: Pass the database session to the repository
+    :param current_user: User: Get the current user
+    :return: A list of users
+    :doc-author: Trelent
+    """
     users = await repository_users.get_users(db)
     return users
 
@@ -29,6 +37,16 @@ async def get_users(db: Session = Depends(get_db), current_user: User = Depends(
 @router.get("/{user_id}", response_model=UserResponse, dependencies=[Depends(RateLimiter(times=2, seconds=5))])
 async def get_user(user_id: int = Path(ge=1), db: Session = Depends(get_db),
                    current_user: User = Depends(auth_service.get_current_user)):
+    """
+    The get_user function is a GET request that returns the user with the given ID.
+    If no such user exists, it raises an HTTP 404 error.
+
+    :param user_id: int: Specify the type of parameter that is expected
+    :param db: Session: Pass the database session to the repository function
+    :param current_user: User: Get the current user
+    :return: A user object
+    :doc-author: Trelent
+    """
     user = await repository_users.get_user_by_id(user_id, db)
     if user is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Not Found")
@@ -39,6 +57,15 @@ async def get_user(user_id: int = Path(ge=1), db: Session = Depends(get_db),
              dependencies=[Depends(RateLimiter(times=2, seconds=5))])
 async def create_user(body: UserModel, db: Session = Depends(get_db),
                       current_user: User = Depends(auth_service.get_current_user)):
+    """
+    The create_user function creates a new user in the database.
+
+    :param body: UserModel: Get the data from the request body
+    :param db: Session: Pass the database session to the function
+    :param current_user: User: Get the current user
+    :return: A user object
+    :doc-author: Trelent
+    """
     user = await repository_users.get_user_by_email(body.email, db)
     if user:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail='Email is exists!')
@@ -50,6 +77,18 @@ async def create_user(body: UserModel, db: Session = Depends(get_db),
 @router.put("/{user_id}", response_model=UserResponse, dependencies=[Depends(RateLimiter(times=2, seconds=5))])
 async def update_user(body: UserModel, user_id: int = Path(ge=1), db: Session = Depends(get_db),
                       current_user: User = Depends(auth_service.get_current_user)):
+    """
+    The update_user function updates a user in the database.
+        The function takes an id, body and db as parameters.
+        It returns a UserModel object.
+
+    :param body: UserModel: Get the data from the request body
+    :param user_id: int: Get the user_id from the url
+    :param db: Session: Get the database session
+    :param current_user: User: Get the current user from the auth_service
+    :return: A usermodel object
+    :doc-author: Trelent
+    """
     user = await repository_users.update(user_id, body, db)
     if user is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Not Found")
@@ -60,6 +99,15 @@ async def update_user(body: UserModel, user_id: int = Path(ge=1), db: Session = 
                dependencies=[Depends(RateLimiter(times=2, seconds=5))])
 async def remove_user(user_id: int = Path(ge=1), db: Session = Depends(get_db),
                       current_user: User = Depends(auth_service.get_current_user)):
+    """
+    The remove_user function removes a user from the database.
+
+    :param user_id: int: Specify the path parameter in the url
+    :param db: Session: Pass the database session to the repository
+    :param current_user: User: Get the current user from the database
+    :return: The removed user
+    :doc-author: Trelent
+    """
     user = await repository_users.remove(user_id, db)
     if user is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Not Found")
