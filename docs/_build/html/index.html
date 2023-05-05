@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Welcome to hw_fastapi’s documentation! &#8212; hw_fastapi  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">hw_fastapi  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to hw_fastapi’s documentation!</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="welcome-to-hw-fastapi-s-documentation">
+<h1>Welcome to hw_fastapi’s documentation!<a class="headerlink" href="#welcome-to-hw-fastapi-s-documentation" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="rest-api-main">
+<h1>REST API main<a class="headerlink" href="#rest-api-main" title="Permalink to this heading">¶</a></h1>
+</section>
+<section id="module-src.repository.users">
+<span id="rest-api-repository-users"></span><h1>REST API repository Users<a class="headerlink" href="#module-src.repository.users" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.users.confirmed_email">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.users.</span></span><span class="sig-name descname"><span class="pre">confirmed_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#src.repository.users.confirmed_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>The confirmed_email function takes in an email and a database session,
+and sets the confirmed field of the user with that email to True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>email</strong> – str: Specify the email address of the user to confirm</p></li>
+<li><p><strong>db</strong> – Session: Access the database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.users.create">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.users.</span></span><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UserModel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.users.create" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The create function creates a new user in the database.</dt><dd><dl class="simple">
+<dt>Args:</dt><dd><p>body (UserModel): The UserModel object to be created.
+db (Session): The SQLAlchemy session object used for querying the database.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body</strong> – UserModel: Validate the body of the request</p></li>
+<li><p><strong>db</strong> – Session: Access the database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A user object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.users.create_guest">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.users.</span></span><span class="sig-name descname"><span class="pre">create_guest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">GuestModel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.users.create_guest" title="Permalink to this definition">¶</a></dt>
+<dd><p>The create_guest function creates a new guest in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body</strong> – GuestModel: Pass the data from the request body into this function</p></li>
+<li><p><strong>db</strong> – Session: Create a connection to the database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the new guest object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.users.get_user_by_email">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.users.</span></span><span class="sig-name descname"><span class="pre">get_user_by_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.users.get_user_by_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>The get_user_by_email function takes in an email and a database session,
+and returns the user associated with that email. If no such user exists, it returns None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>email</strong> – str: Pass in the email address of the user we want to retrieve</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A user object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.users.get_user_by_id">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.users.</span></span><span class="sig-name descname"><span class="pre">get_user_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.users.get_user_by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The get_user_by_id function takes in a user_id and db Session object,
+and returns the User object with that id. If no such user exists, it returns None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_id</strong> – int: Specify the type of data that is expected to be passed into the function</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A user object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.users.get_users">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.users.</span></span><span class="sig-name descname"><span class="pre">get_users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.users.get_users" title="Permalink to this definition">¶</a></dt>
+<dd><p>The get_users function returns a list of all users in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>db</strong> – Session: Pass in the database session</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of users</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.users.remove">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.users.</span></span><span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.users.remove" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The remove function removes a user from the database.</dt><dd><dl class="simple">
+<dt>Args:</dt><dd><p>user_id (int): The id of the user to remove.
+db (Session): A connection to the database.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_id</strong> – int: Specify the user id of the user to be removed</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The user that was removed</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.users.update">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.users.</span></span><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UserModel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.users.update" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The update function updates a user in the database.</dt><dd><dl class="simple">
+<dt>Args:</dt><dd><p>user_id (int): The id of the user to update.
+body (UserModel): The updated version of the UserModel object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_id</strong> – int: Identify the user to be deleted</p></li>
+<li><p><strong>body</strong> – UserModel: Get the user’s email from the request body</p></li>
+<li><p><strong>db</strong> – Session: Access the database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The updated user object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.users.update_avatar">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.users.</span></span><span class="sig-name descname"><span class="pre">update_avatar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">User</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#src.repository.users.update_avatar" title="Permalink to this definition">¶</a></dt>
+<dd><p>The update_avatar function updates the avatar of a user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>email</strong> – Find the user in the database</p></li>
+<li><p><strong>url</strong> – str: Specify the type of data that will be passed to the function</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A user object if the update was successful</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.users.update_token">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.users.</span></span><span class="sig-name descname"><span class="pre">update_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refresh_token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.users.update_token" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The update_token function updates the refresh token for a user in the database.</dt><dd><dl class="simple">
+<dt>Args:</dt><dd><p>user (User): The User object to update.
+refresh_token (str): The new refresh token to store in the database.
+db (Session): A connection to our Postgres database.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> – User: Pass in the user object</p></li>
+<li><p><strong>refresh_token</strong> – Update the refresh_token in the database</p></li>
+<li><p><strong>db</strong> – Session: Access the database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The user object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-src.repository.find">
+<span id="rest-api-repository-find"></span><h1>REST API repository Find<a class="headerlink" href="#module-src.repository.find" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.find.get_birthday_list">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.find.</span></span><span class="sig-name descname"><span class="pre">get_birthday_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.find.get_birthday_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>The get_birthday_list function takes in a shift value and a database connection.
+It then returns all contacts whose birthday is within the next ‘shift’ days.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shift</strong> – int: Set the range of days in which to look for birthdays</p></li>
+<li><p><strong>db</strong> – Session: Access the database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of contacts whose birthday is within the next 7 days</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.find.get_user_by_email">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.find.</span></span><span class="sig-name descname"><span class="pre">get_user_by_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.find.get_user_by_email" title="Permalink to this definition">¶</a></dt>
+<dd><p>The get_user_by_email function takes in an email address and a database session.
+It then queries the database for a user with that email address, returning the first result if it exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>email</strong> – str: Pass in the email of the user we want to get</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A user object from the database</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.find.get_user_by_firstname">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.find.</span></span><span class="sig-name descname"><span class="pre">get_user_by_firstname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">firstname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.find.get_user_by_firstname" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The get_user_by_firstname function returns a user by firstname.</dt><dd><dl class="simple">
+<dt>Args:</dt><dd><p>firstname (str): The name of the user to find.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>firstname</strong> – str: Define the type of parameter that will be passed into the function</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The first contact in the database whose firstname matches the given name</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.find.get_user_by_lastname">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.find.</span></span><span class="sig-name descname"><span class="pre">get_user_by_lastname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lastname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.find.get_user_by_lastname" title="Permalink to this definition">¶</a></dt>
+<dd><p>The get_user_by_lastname function takes a lastname and returns the user with that lastname.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lastname</strong> – str: Specify the lastname of the user we want to retrieve</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The first user with the given lastname</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.repository.find.get_user_by_phone">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.repository.find.</span></span><span class="sig-name descname"><span class="pre">get_user_by_phone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.repository.find.get_user_by_phone" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The get_user_by_phone function takes a phone number and returns the user associated with that phone number.</dt><dd><dl class="simple">
+<dt>Args:</dt><dd><p>phone (str): The user’s phone number.
+db (Session): A database session object to query for the user.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>phone</strong> – str: Pass the phone number of the user to be retrieved</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A user object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="rest-api-routes-auth">
+<h1>REST API routes Auth<a class="headerlink" href="#rest-api-routes-auth" title="Permalink to this heading">¶</a></h1>
+</section>
+<section id="module-src.routes.find">
+<span id="rest-api-routes-find"></span><h1>REST API routes Find<a class="headerlink" href="#module-src.routes.find" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.routes.find.get_birthday_list">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.routes.find.</span></span><span class="sig-name descname"><span class="pre">get_birthday_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Query(0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.routes.find.get_birthday_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>The get_birthday_list function returns a list of contacts with birthdays in the next 7 days.
+The shift parameter allows you to specify how many days ahead or behind you want to look for birthdays.
+For example, if shift is set to 1, then it will return all contacts with birthdays tomorrow.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shift</strong> – int: Determine the shift of birthdays to be returned</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the function</p></li>
+<li><p><strong>current_user</strong> – User: Get the current user from the database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of contacts who have a birthday in the next 30 days</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.routes.find.get_user_by_search_parameter">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.routes.find.</span></span><span class="sig-name descname"><span class="pre">get_user_by_search_parameter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_param</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">UserResponse</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#src.routes.find.get_user_by_search_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.routes.find.search_contact">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.routes.find.</span></span><span class="sig-name descname"><span class="pre">search_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_param</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Query(Ellipsis)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.routes.find.search_contact" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The search_contact function searches for a contact by either their username or email.</dt><dd><p>The search_param parameter is the field to be searched, and value is the value of that field.
+If no user with that username or email exists, an HTTP 404 error will be returned.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>search_param</strong> – str: Specify the search parameter (e</p></li>
+<li><p><strong>value</strong> – str: Specify the value of the search parameter</p></li>
+<li><p><strong>min_length</strong> – Specify the minimum length of the value parameter</p></li>
+<li><p><strong>db</strong> – Session: Get the database session</p></li>
+<li><p><strong>current_user</strong> – User: Get the user from the database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A contact object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-src.routes.users">
+<span id="rest-api-routes-users"></span><h1>REST API routes Users<a class="headerlink" href="#module-src.routes.users" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.routes.users.create_user">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.routes.users.</span></span><span class="sig-name descname"><span class="pre">create_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UserModel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.routes.users.create_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>The create_user function creates a new user in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body</strong> – UserModel: Get the data from the request body</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the function</p></li>
+<li><p><strong>current_user</strong> – User: Get the current user</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A user object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.routes.users.get_user">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.routes.users.</span></span><span class="sig-name descname"><span class="pre">get_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Path(Ellipsis)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.routes.users.get_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>The get_user function is a GET request that returns the user with the given ID.
+If no such user exists, it raises an HTTP 404 error.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_id</strong> – int: Specify the type of parameter that is expected</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the repository function</p></li>
+<li><p><strong>current_user</strong> – User: Get the current user</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A user object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.routes.users.get_users">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.routes.users.</span></span><span class="sig-name descname"><span class="pre">get_users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.routes.users.get_users" title="Permalink to this definition">¶</a></dt>
+<dd><p>The get_users function returns a list of users.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> – Session: Pass the database session to the repository</p></li>
+<li><p><strong>current_user</strong> – User: Get the current user</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of users</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.routes.users.remove_user">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.routes.users.</span></span><span class="sig-name descname"><span class="pre">remove_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Path(Ellipsis)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.routes.users.remove_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>The remove_user function removes a user from the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_id</strong> – int: Specify the path parameter in the url</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the repository</p></li>
+<li><p><strong>current_user</strong> – User: Get the current user from the database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The removed user</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.routes.users.update_user">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.routes.users.</span></span><span class="sig-name descname"><span class="pre">update_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UserModel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Path(Ellipsis)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.routes.users.update_user" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The update_user function updates a user in the database.</dt><dd><p>The function takes an id, body and db as parameters.
+It returns a UserModel object.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body</strong> – UserModel: Get the data from the request body</p></li>
+<li><p><strong>user_id</strong> – int: Get the user_id from the url</p></li>
+<li><p><strong>db</strong> – Session: Get the database session</p></li>
+<li><p><strong>current_user</strong> – User: Get the current user from the auth_service</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A usermodel object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-src.routes.guest">
+<span id="rest-api-routes-guest"></span><h1>REST API routes Guest<a class="headerlink" href="#module-src.routes.guest" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.routes.guest.read_users_me">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.routes.guest.</span></span><span class="sig-name descname"><span class="pre">read_users_me</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.routes.guest.read_users_me" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The read_users_me function is a GET request that returns the current user’s information.</dt><dd><p>It requires authentication, and it uses the auth_service to get the current user.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>current_user</strong> – User: Get the user object from the database</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The current user object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.routes.guest.update_avatar_user">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.routes.guest.</span></span><span class="sig-name descname"><span class="pre">update_avatar_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UploadFile</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">File(PydanticUndefined)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.routes.guest.update_avatar_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>The update_avatar_user function updates the avatar of a user.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> – UploadFile: Get the file from the request</p></li>
+<li><p><strong>current_user</strong> – User: Get the current user from the database</p></li>
+<li><p><strong>db</strong> – Session: Get a database session</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The updated user</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-src.services.auth">
+<span id="rest-api-service-auth"></span><h1>REST API service Auth<a class="headerlink" href="#module-src.services.auth" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.services.auth.Auth">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.services.auth.</span></span><span class="sig-name descname"><span class="pre">Auth</span></span><a class="headerlink" href="#src.services.auth.Auth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.services.auth.Auth.ALGORITHM">
+<span class="sig-name descname"><span class="pre">ALGORITHM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'HS256'</span></em><a class="headerlink" href="#src.services.auth.Auth.ALGORITHM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.services.auth.Auth.SECRET_KEY">
+<span class="sig-name descname"><span class="pre">SECRET_KEY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'secret_key'</span></em><a class="headerlink" href="#src.services.auth.Auth.SECRET_KEY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.services.auth.Auth.create_access_token">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_access_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expires_delta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.services.auth.Auth.create_access_token" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The create_access_token function creates a new access token for the user.</dt><dd><p>The function takes in two arguments: data and expires_delta. Data is a dictionary that contains all of the information about the user, such as their username, email address, etc. Expires_delta is an optional argument that specifies how long you want your access token to be valid for (in seconds). If no value is specified then it defaults to 15 minutes.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Represent the instance of the class</p></li>
+<li><p><strong>data</strong> – dict: Pass the data that will be encoded in the jwt</p></li>
+<li><p><strong>expires_delta</strong> – Optional[float]: Set the expiration time for the access token</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The encoded access token</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.services.auth.Auth.create_email_token">
+<span class="sig-name descname"><span class="pre">create_email_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.services.auth.Auth.create_email_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>The create_email_token function takes a dictionary of data and returns a token.
+The token is encoded with the SECRET_KEY, which is stored in the .env file.
+The algorithm used to encode the token is also stored in the .env file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Represent the instance of the class</p></li>
+<li><p><strong>data</strong> – dict: Pass in the user’s email address</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A token that is encoded with the user’s email address and a timestamp</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.services.auth.Auth.create_refresh_token">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_refresh_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expires_delta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.services.auth.Auth.create_refresh_token" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The create_refresh_token function creates a refresh token for the user.</dt><dd><dl class="simple">
+<dt>Args:</dt><dd><p>data (dict): A dictionary containing the user’s id and username.
+expires_delta (Optional[float]): The number of seconds until the refresh token expires. Defaults to None, which is 7 days in seconds.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Represent the instance of the class</p></li>
+<li><p><strong>data</strong> – dict: Pass the user’s id to the function</p></li>
+<li><p><strong>expires_delta</strong> – Optional[float]: Set the time of expiration for the refresh token</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A refresh token that is encoded using the jwt library</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.services.auth.Auth.decode_refresh_token">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">decode_refresh_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">refresh_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.services.auth.Auth.decode_refresh_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>The decode_refresh_token function is used to decode the refresh token.
+It takes a refresh_token as an argument and returns the email of the user if it’s valid.
+If not, it raises an HTTPException with status code 401 (UNAUTHORIZED) and detail ‘Could not validate credentials’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Represent the instance of the class</p></li>
+<li><p><strong>refresh_token</strong> – str: Pass in the refresh token that was sent by the client</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A string</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.services.auth.Auth.get_current_user">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_current_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(OAuth2PasswordBearer)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.services.auth.Auth.get_current_user" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>The get_current_user function is a dependency that will be used in the</dt><dd><p>UserRouter class. It takes in a token and db session, and returns the user
+object associated with that token. If no user is found, it raises an error.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Access the class attributes and methods</p></li>
+<li><p><strong>token</strong> – str: Get the token from the request header</p></li>
+<li><p><strong>db</strong> – Session: Pass the database session to the function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The user object</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.services.auth.Auth.get_email_from_token">
+<span class="sig-name descname"><span class="pre">get_email_from_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.services.auth.Auth.get_email_from_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>The get_email_from_token function takes a token as an argument and returns the email associated with that token.
+It does this by decoding the JWT using our SECRET_KEY and ALGORITHM, then checking to make sure that it has a scope of ‘email_token’.
+If so, it returns the email address from the payload’s sub field. If not, it raises an HTTPException with status code 401 (Unauthorized)
+and detail message &amp;quot;Invalid scope for token&amp;quot;. If there is any other error in decoding or validating the JWT, we raise another
+HTTPException with status code 422 (Unprocess</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Represent the instance of the class</p></li>
+<li><p><strong>token</strong> – str: Pass in the token that was sent to the user’s email address</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The email address of a user</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.services.auth.Auth.get_password_hash">
+<span class="sig-name descname"><span class="pre">get_password_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.services.auth.Auth.get_password_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>The get_password_hash function takes a password as input and returns the hash of that password.
+The hash is generated using the pwd_context object, which is an instance of Flask-Bcrypt’s Bcrypt class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Represent the instance of the class</p></li>
+<li><p><strong>password</strong> – str: Pass in the password that is to be hashed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A string of characters that represents the hashed password</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.services.auth.Auth.oauth2_scheme">
+<span class="sig-name descname"><span class="pre">oauth2_scheme</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;fastapi.security.oauth2.OAuth2PasswordBearer</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#src.services.auth.Auth.oauth2_scheme" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.services.auth.Auth.pwd_context">
+<span class="sig-name descname"><span class="pre">pwd_context</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;CryptContext&gt;</span></em><a class="headerlink" href="#src.services.auth.Auth.pwd_context" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="src.services.auth.Auth.r">
+<span class="sig-name descname"><span class="pre">r</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Redis&lt;ConnectionPool&lt;Connection&lt;host=localhost,port=6379,db=0&gt;&gt;&gt;</span></em><a class="headerlink" href="#src.services.auth.Auth.r" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.services.auth.Auth.verify_password">
+<span class="sig-name descname"><span class="pre">verify_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plain_password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hashed_password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.services.auth.Auth.verify_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>The verify_password function takes a plain-text password and hashed
+password as arguments. It then uses the pwd_context object to verify that the
+plain-text password matches the hashed one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> – Make the method a bound method, which means that it can be called on an instance of the class</p></li>
+<li><p><strong>plain_password</strong> – Pass in the password that the user entered into the form</p></li>
+<li><p><strong>hashed_password</strong> – Compare the plain_password parameter to the hashed password stored in the database</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A boolean value</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="rest-api-service-email">
+<h1>REST API service Email<a class="headerlink" href="#rest-api-service-email" title="Permalink to this heading">¶</a></h1>
+</section>
+<section id="module-src.services.cloudinary">
+<span id="rest-api-service-cloudinary"></span><h1>REST API service Cloudinary<a class="headerlink" href="#module-src.services.cloudinary" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.services.cloudinary.CloudImage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.services.cloudinary.</span></span><span class="sig-name descname"><span class="pre">CloudImage</span></span><a class="headerlink" href="#src.services.cloudinary.CloudImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.services.cloudinary.CloudImage.generate_name_avatar">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_name_avatar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.services.cloudinary.CloudImage.generate_name_avatar" title="Permalink to this definition">¶</a></dt>
+<dd><p>The generate_name_avatar function takes an email address as input and returns a string that is the name of the avatar image.
+The function uses SHA256 to hash the email address, then truncates it to 12 characters.
+It then prepends ‘web9/’ to this string and returns it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>email</strong> – str: Define the type of parameter that is expected</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A string that is the name of a file in the web9 directory</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.services.cloudinary.CloudImage.get_url_for_avatar">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_url_for_avatar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">public_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.services.cloudinary.CloudImage.get_url_for_avatar" title="Permalink to this definition">¶</a></dt>
+<dd><p>The get_url_for_avatar function takes in a public_id and an r (which is the result of a cloudinary.api.resource call)
+and returns the URL for that avatar image, which will be used to display it on the page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>public_id</strong> – Specify the image to be used</p></li>
+<li><p><strong>r</strong> – Pass in the request object to the function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The url of the avatar image</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.services.cloudinary.CloudImage.upload">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">upload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">public_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.services.cloudinary.CloudImage.upload" title="Permalink to this definition">¶</a></dt>
+<dd><p>The upload function takes a file and public_id as arguments.
+The function then uploads the file to Cloudinary using the public_id provided.
+If no public_id is provided, one will be generated automatically.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> – Pass the file to be uploaded</p></li>
+<li><p><strong>public_id</strong> – str: Specify the public id of the uploaded image</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary</p>
+</dd>
+<dt class="field-odd">Doc-author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Trelent</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.services.roles">
+<span id="rest-api-service-roles"></span><h1>REST API service Roles<a class="headerlink" href="#module-src.services.roles" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.services.roles.RoleAccess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.services.roles.</span></span><span class="sig-name descname"><span class="pre">RoleAccess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allowed_roles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Role</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.services.roles.RoleAccess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="#">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Welcome to hw_fastapi’s documentation!</a></li>
+<li><a class="reference internal" href="#rest-api-main">REST API main</a></li>
+<li><a class="reference internal" href="#module-src.repository.users">REST API repository Users</a><ul>
+<li><a class="reference internal" href="#src.repository.users.confirmed_email"><code class="docutils literal notranslate"><span class="pre">confirmed_email()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.users.create"><code class="docutils literal notranslate"><span class="pre">create()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.users.create_guest"><code class="docutils literal notranslate"><span class="pre">create_guest()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.users.get_user_by_email"><code class="docutils literal notranslate"><span class="pre">get_user_by_email()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.users.get_user_by_id"><code class="docutils literal notranslate"><span class="pre">get_user_by_id()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.users.get_users"><code class="docutils literal notranslate"><span class="pre">get_users()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.users.remove"><code class="docutils literal notranslate"><span class="pre">remove()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.users.update"><code class="docutils literal notranslate"><span class="pre">update()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.users.update_avatar"><code class="docutils literal notranslate"><span class="pre">update_avatar()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.users.update_token"><code class="docutils literal notranslate"><span class="pre">update_token()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.repository.find">REST API repository Find</a><ul>
+<li><a class="reference internal" href="#src.repository.find.get_birthday_list"><code class="docutils literal notranslate"><span class="pre">get_birthday_list()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.find.get_user_by_email"><code class="docutils literal notranslate"><span class="pre">get_user_by_email()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.find.get_user_by_firstname"><code class="docutils literal notranslate"><span class="pre">get_user_by_firstname()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.find.get_user_by_lastname"><code class="docutils literal notranslate"><span class="pre">get_user_by_lastname()</span></code></a></li>
+<li><a class="reference internal" href="#src.repository.find.get_user_by_phone"><code class="docutils literal notranslate"><span class="pre">get_user_by_phone()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rest-api-routes-auth">REST API routes Auth</a></li>
+<li><a class="reference internal" href="#module-src.routes.find">REST API routes Find</a><ul>
+<li><a class="reference internal" href="#src.routes.find.get_birthday_list"><code class="docutils literal notranslate"><span class="pre">get_birthday_list()</span></code></a></li>
+<li><a class="reference internal" href="#src.routes.find.get_user_by_search_parameter"><code class="docutils literal notranslate"><span class="pre">get_user_by_search_parameter()</span></code></a></li>
+<li><a class="reference internal" href="#src.routes.find.search_contact"><code class="docutils literal notranslate"><span class="pre">search_contact()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.routes.users">REST API routes Users</a><ul>
+<li><a class="reference internal" href="#src.routes.users.create_user"><code class="docutils literal notranslate"><span class="pre">create_user()</span></code></a></li>
+<li><a class="reference internal" href="#src.routes.users.get_user"><code class="docutils literal notranslate"><span class="pre">get_user()</span></code></a></li>
+<li><a class="reference internal" href="#src.routes.users.get_users"><code class="docutils literal notranslate"><span class="pre">get_users()</span></code></a></li>
+<li><a class="reference internal" href="#src.routes.users.remove_user"><code class="docutils literal notranslate"><span class="pre">remove_user()</span></code></a></li>
+<li><a class="reference internal" href="#src.routes.users.update_user"><code class="docutils literal notranslate"><span class="pre">update_user()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.routes.guest">REST API routes Guest</a><ul>
+<li><a class="reference internal" href="#src.routes.guest.read_users_me"><code class="docutils literal notranslate"><span class="pre">read_users_me()</span></code></a></li>
+<li><a class="reference internal" href="#src.routes.guest.update_avatar_user"><code class="docutils literal notranslate"><span class="pre">update_avatar_user()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.services.auth">REST API service Auth</a><ul>
+<li><a class="reference internal" href="#src.services.auth.Auth"><code class="docutils literal notranslate"><span class="pre">Auth</span></code></a><ul>
+<li><a class="reference internal" href="#src.services.auth.Auth.ALGORITHM"><code class="docutils literal notranslate"><span class="pre">Auth.ALGORITHM</span></code></a></li>
+<li><a class="reference internal" href="#src.services.auth.Auth.SECRET_KEY"><code class="docutils literal notranslate"><span class="pre">Auth.SECRET_KEY</span></code></a></li>
+<li><a class="reference internal" href="#src.services.auth.Auth.create_access_token"><code class="docutils literal notranslate"><span class="pre">Auth.create_access_token()</span></code></a></li>
+<li><a class="reference internal" href="#src.services.auth.Auth.create_email_token"><code class="docutils literal notranslate"><span class="pre">Auth.create_email_token()</span></code></a></li>
+<li><a class="reference internal" href="#src.services.auth.Auth.create_refresh_token"><code class="docutils literal notranslate"><span class="pre">Auth.create_refresh_token()</span></code></a></li>
+<li><a class="reference internal" href="#src.services.auth.Auth.decode_refresh_token"><code class="docutils literal notranslate"><span class="pre">Auth.decode_refresh_token()</span></code></a></li>
+<li><a class="reference internal" href="#src.services.auth.Auth.get_current_user"><code class="docutils literal notranslate"><span class="pre">Auth.get_current_user()</span></code></a></li>
+<li><a class="reference internal" href="#src.services.auth.Auth.get_email_from_token"><code class="docutils literal notranslate"><span class="pre">Auth.get_email_from_token()</span></code></a></li>
+<li><a class="reference internal" href="#src.services.auth.Auth.get_password_hash"><code class="docutils literal notranslate"><span class="pre">Auth.get_password_hash()</span></code></a></li>
+<li><a class="reference internal" href="#src.services.auth.Auth.oauth2_scheme"><code class="docutils literal notranslate"><span class="pre">Auth.oauth2_scheme</span></code></a></li>
+<li><a class="reference internal" href="#src.services.auth.Auth.pwd_context"><code class="docutils literal notranslate"><span class="pre">Auth.pwd_context</span></code></a></li>
+<li><a class="reference internal" href="#src.services.auth.Auth.r"><code class="docutils literal notranslate"><span class="pre">Auth.r</span></code></a></li>
+<li><a class="reference internal" href="#src.services.auth.Auth.verify_password"><code class="docutils literal notranslate"><span class="pre">Auth.verify_password()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rest-api-service-email">REST API service Email</a></li>
+<li><a class="reference internal" href="#module-src.services.cloudinary">REST API service Cloudinary</a><ul>
+<li><a class="reference internal" href="#src.services.cloudinary.CloudImage"><code class="docutils literal notranslate"><span class="pre">CloudImage</span></code></a><ul>
+<li><a class="reference internal" href="#src.services.cloudinary.CloudImage.generate_name_avatar"><code class="docutils literal notranslate"><span class="pre">CloudImage.generate_name_avatar()</span></code></a></li>
+<li><a class="reference internal" href="#src.services.cloudinary.CloudImage.get_url_for_avatar"><code class="docutils literal notranslate"><span class="pre">CloudImage.get_url_for_avatar()</span></code></a></li>
+<li><a class="reference internal" href="#src.services.cloudinary.CloudImage.upload"><code class="docutils literal notranslate"><span class="pre">CloudImage.upload()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-src.services.roles">REST API service Roles</a><ul>
+<li><a class="reference internal" href="#src.services.roles.RoleAccess"><code class="docutils literal notranslate"><span class="pre">RoleAccess</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">hw_fastapi  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to hw_fastapi’s documentation!</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, sergii.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.0.
+    </div>
+  </body>
+</html>
